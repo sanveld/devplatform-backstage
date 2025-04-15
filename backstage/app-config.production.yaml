@@ -42,9 +42,8 @@ auth:
         clientId: ${GITHUB_CLIENT_ID}
         clientSecret: ${GITHUB_CLIENT_SECRET}
         signIn:
-          enabled: 
-            resolvers:
-              - resolver: usernameMatchingUserEntityName
+          resolvers:
+            - resolver: usernameMatchingUserEntityName
 
 catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
