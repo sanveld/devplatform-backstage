@@ -39,3 +39,22 @@ spec:
     message ExampleMessage {
       string example = 1;
     };
+---
+# Component representing the Backstage backend itself
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-backend-app # Choose a unique name for the Backstage entity
+  description: The Backstage backend application deployment
+  annotations:
+    # Link this entity to Kubernetes resources with this ID
+    'backstage.io/kubernetes-id': backstage-backend-app 
+    # Tell Backstage to look in the 'in-cluster' defined in app-config.yaml
+    'backstage.io/kubernetes-cluster': in-cluster 
+    # Specify the namespace where Backstage backend runs (replace if different)
+    'backstage.io/kubernetes-namespace': backstage 
+spec:
+  type: service
+  lifecycle: production
+  owner: guests # Change owner as appropriate
+  system: examples # Assign to a system if desired
