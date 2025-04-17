@@ -45,6 +45,8 @@ auth:
             - resolver: usernameMatchingUserEntityName
 
 kubernetes:
+  serviceLocatorMethod: 
+    type: 'singleTenant'
   clusterLocatorMethods:
     - type: 'config'
       clusters:
