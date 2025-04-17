@@ -50,7 +50,7 @@ kubernetes:
       clusters:
         # Configuration for the cluster Backstage is running in
         - name: in-cluster # A unique name for this cluster within Backstage
-          # No 'url' needed - it will be detected automatically
+          url: 'https://kubernetes.default.svc' # Add the standard in-cluster URL
           authProvider: 'serviceAccount'
           # No 'serviceAccountToken' needed - it uses the pod's mounted token
           # No 'skipTLSVerify', 'caData', or 'caFile' needed for in-cluster
